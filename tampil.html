@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+    <div id="halamanform">
+        <h1>Halaman Form</h1>
+        <hr> Nik
+        <input type="text" id="nomor" placeholder="Masukkan NIK" class="form-control"> Nama <input type="text" id="name" placeholder="Masukkan Nama" class="form-control"> Alamat
+        <input type="text" id="alamat" placeholder="Masukkan Alamat" class="form-control">
+        <button onclick="proses();">Simpan</button>
+
+    </div>
+
+    <script>
+        function proses() {
+            const pilih = confirm("Apakah mau melakukan proses data?");
+
+
+            if (pilih === true) {
+                const id = document.getElementById("nomor").value;
+                const jenengku = document.getElementById("name").value;
+                const rumahmu = document.getElementById("alamat").value;
+
+                const searchParams = new URLSearchParams({
+                    nomor: id,
+                    name: jenengku,
+                    alamat: rumahmu,
+                });
+                window.location.href = "detail.html?" + searchParams.toString();
+            } else {
+                alert("Oke!!");
+            }
+
+        }
+    </script>
+
+
+</body>
+
+</html>
